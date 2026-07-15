@@ -229,36 +229,71 @@ ontwerp).
 
 ### Stage 5 — `/website` "De website"
 Hub explains: "drie richtingen — geen winnaar kiezen, vertel wat je aantrekt en afstoot."
-Three full-viewport live concept slices (each a real route, own fonts/palette/motion,
-~1.5 screens: nav + hero + one project teaser). Directions get **rebuilt from whichever
-design-explorations images Floris selects** — provisional:
-- **A Galerie/Editorial** (Marcelis-achtig) · **B Warm Boutique** (Mokko/VERSTELLE-achtig) · **C Gedurfd Eclectisch**
-Per concept: `ElementFeedbackOverlay` → `website.{a|b|c}.{typografie|beeld|kleur|layout|gevoel}` + `website.{x}.overall` comment.
+
+**The three concepts — LOCKED (Floris selected 2026-07-15):**
+
+| Route | Source mockup | Direction | Design tokens |
+|---|---|---|---|
+| `/website/a` | **B1 — Warm Boutique (Parisian greige)** | Centered high-contrast serif wordmark, greige/limestone plaster canvas, hairline rules, Parisian arch photography, bordeaux accents, understated but rich | paper `#EDE7DE`, ink `#221D18`, bordeaux `#6E1423`, hairlines |
+| `/website/b` | **D3 — Parisian Dusk (members club)** | Evening warmth: dusky warm-grey/espresso canvas, champagne-gold serif wordmark, golden-hour photography, sculptural lighting glow, deep green + cognac accents — seductive private-club feel | dusk `#4A443C`, champagne `#D8C39A`, green `#2E4438`, cognac `#9A5B33` |
+| `/website/c` | **E3 — Dark Monolith (cinematic)** | Full-viewport architectural photography as the interface, wordmark + one Dutch sentence overlaid in warm white, near-zero UI (one menu dot), dramatic daylight, vide/double-height spaces | near-black `#191714`, warm white `#F2EDE4`, travertine `#C9B99F` |
+
+Each is a real coded route with its own fonts/palette/motion, ~1.5 screens (nav + hero +
+one project teaser), rebuilt faithfully from its source mockup — the mockup is the design
+brief for the route.
+
+Per concept: `ElementFeedbackOverlay` → `website.{a|b|c}.{typografie|beeld|kleur|layout|gevoel}`
++ `website.{x}.overall` comment.
+
+**The full mockup gallery — REQUIRED on this page.** After (or alongside) the three live
+concepts, Stage 5 shows **all 15 design-exploration mockups** (`design-explorations/*.png`)
+as a browsable "ontwerpverkenning" gallery, grouped by direction (A–E), presented as the
+studio's design research — "dit is wat we verkenden voordat we deze drie kozen."
+Every mockup gets ReactionGrid behaviour: `website.verkenning.{A1..E3}` ❤️/👎 + comment,
+so Elise's reactions to ALL 15 (not just the chosen three) land in the export.
+
 Then → `/overzicht`: completeness check ("nog 3 vragen open in Manifest"), ExportPanel. **The single CTA of the whole site: stuur alles naar Floris.**
 
 ---
 
-## 5. Imagery pipeline
+## 5. Imagery pipeline — ALL journey imagery is Gemini-generated at build time
 
-1. **Now (done):** `tools/generate-designs.mjs` → 15 landing-page concepts in
-   `design-explorations/` across 5 style directions (A gallery-editorial, B warm boutique,
-   C bold eclectic, D Parisian collected, E dark gallery). **Floris selects favorites** →
-   those define the final three Stage-5 concepts (may remix directions).
-2. **Phase 1:** `tools/generate-moodboard.mjs` → ~50 candidates in the 5 clusters
-   (gemini-3-pro-image, 4:5 portrait for the grid), hand-curate down to 30–40. Every image
-   must pass the DNA test: sculptural / 30s-70s-contemporary / Paris-Milan — never beige.
-3. **Phase 1:** palette-strip images + material-card images (12 materials) + Stage-4
-   method illustrations (3 foto's → varianten sequence, can be generated as one storyboard).
-4. All finals optimized (≤200 KB, AVIF/WebP via `next/image`).
+Principle: the Gemini API (`gemini-3-pro-image`, key in `.env.local`) is the image factory
+for the entire journey. Generation happens **during the build sessions via `tools/` scripts**
+(never at runtime, never now — this section is instructions for later). Generate 3–4× more
+than needed, curate ruthlessly; every image must pass the DNA test: sculptural /
+30s-70s-contemporary / Paris-Milan — never beige, never AI-generic.
+
+1. **Done (2026-07-15):** `tools/generate-designs.mjs` → 15 landing-page mockups in
+   `design-explorations/` across 5 directions. **Selection locked: B1, D3, E3** become the
+   three Stage-5 live concepts; **all 15 mockups are shown in the Stage-5
+   "ontwerpverkenning" gallery** with reaction capture (see §4 Stage 5).
+2. **Build session — `tools/generate-moodboard.mjs`:** ~50 candidates in the 5 Stage-3
+   clusters (4:5 portrait for the grid), hand-curate down to 30–40.
+3. **Build session — `tools/generate-concept-assets.mjs`:** per-concept photography for the
+   three live routes, matched to each source mockup's world:
+   - **A/B1:** Parisian arches, herringbone + bordeaux/chrome accents, daylight greige
+   - **B/D3:** golden-hour interiors, glowing sculptural lighting, green/cognac
+   - **C/E3:** cinematic dark architecture, vide/daylight shafts, walnut panelling
+   Plus project-teaser images per concept (1–2 each).
+4. **Build session — `tools/generate-support.mjs`:** all supporting/tool imagery —
+   palette-strip images, 12 material cards (MaterialPicker), 3 typography specimens,
+   Stage-4 client-method storyboard (3 foto's → varianten → sessie → ontwerp),
+   Stage-1 narrative backdrops, and any further UI-support imagery that turns out to be
+   needed during the build (generate on demand, same DNA test, same curation bar).
+5. All finals optimized (≤200 KB, AVIF/WebP via `next/image`); mockups in the Stage-5
+   gallery served as compressed WebP with tap-to-zoom.
 
 ## 6. Build order (maps to the 1–2 locked sessions)
 
 **Session 1:** scaffold Next.js + Tailwind + fonts + tokens → journey store + feedback
 components → Stages 1–2 complete (content JSON + design pass) → Stage 3 with curated
 imagery → deploy first preview to Vercel (via MCP) for Floris.
-**Session 2:** Stage 4 → the three Stage-5 concepts (from Floris's selection) +
-ElementFeedbackOverlay → `/overzicht` export → iPhone pass (safe areas, sheet UX, share
-flow) → `prefers-reduced-motion` + performance pass → production deploy, unlisted URL.
+**Session 2:** Stage 4 → the three Stage-5 concepts (B1 / D3 / E3, each rebuilt from its
+source mockup with freshly generated concept assets) + ElementFeedbackOverlay → the
+15-mockup "ontwerpverkenning" gallery with reactions → `/overzicht` export → iPhone pass
+(safe areas, sheet UX, share flow) → `prefers-reduced-motion` + performance pass →
+production deploy, unlisted URL.
 
 **Acceptance checklist before handing to Elise:** all ~15 choice IDs write/restore
 correctly after refresh · export file opens standalone & contains full JSON · WhatsApp
@@ -277,6 +312,7 @@ LCP < 2.5s on 4G · no English UI strings except design vocabulary.
 
 ## 8. Approval gate — what Floris decides before build
 
-1. **Select favorite design-exploration images** (in `design-explorations/`) → defines the 3 Stage-5 concepts.
-2. Approve this plan (or mark up changes) — especially: fonts (§2.1), stage accents (§2.2), the red-thread motif (§2.3), choice list (§4), export format (§3.3).
+1. ~~Select favorite design-exploration images~~ **DONE: B1, D3, E3 locked as the three
+   Stage-5 concepts; all 15 mockups shown in the Stage-5 gallery with reaction capture.**
+2. Approve this plan (or mark up changes) — especially: fonts (§2.1), stage accents (§2.2), the red-thread motif (§2.3), choice list (§4), export format (§3.3), imagery pipeline (§5).
 3. Confirm the journey's working title shown to Elise (proposal: **"Het begin van de studio"**).
