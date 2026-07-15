@@ -2,8 +2,14 @@
 
 > **Status:** BUILT & DEPLOYED 2026-07-15. Live (unlisted, noindex) at
 > **https://elise-inky.vercel.app** — git-linked to `opprflorisw/elise` `main`, so every push
-> auto-deploys. Built by Floris **for** Elise.
-> Images served from jsDelivr CDN (pinned to a commit SHA); see `lib/imageLoader.js`.
+> auto-deploys. Built by Floris **for** Elise. Images served locally from `public/`.
+>
+> **2026-07-15 — Elise heeft de reis doorlopen (56 reacties, zie
+> [`feedback-elise.md`](./feedback-elise.md)). Op basis daarvan is de ECHTE website gebouwd
+> onder [`/site`](https://elise-inky.vercel.app/site)** — bereikbaar via de "De website ↗"
+> pill rechtsboven in de reis. Donkere galerie-homepage, lichte editorial binnenpagina's
+> (haar "te duister"-feedback), modern-contrast typografie, wordmark STUDIO-klein /
+> VERSTELLE-groot, pagina's: portfolio (3 cases), aanpak, over, intake, klantportaal.
 >
 > **Source of truth for content:** [`elise.md`](./elise.md) — the studio profile.
 

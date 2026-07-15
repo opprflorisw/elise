@@ -164,3 +164,130 @@ body::before {
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
 }
+
+/* ============================================================
+   THE REAL SITE (/site) — "galerie-nacht, verwarmd"
+   Dark cinematic hero, light editorial body. Modern-contrast
+   typography: expanded architectural sans, Fraunces italic
+   only as an occasional editorial accent.
+   ============================================================ */
+
+.site {
+  --night: #191714;
+  --night-soft: #221f1b;
+  --travertine: #c9b99f;
+  --warmwhite: #f2ede4;
+  --warmwhite-deep: #e9e2d6;
+  --cobalt: #23409a;
+  background: var(--warmwhite);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* architectural display — expanded caps, gallery-like */
+.s-display-xl,
+.s-display-l,
+.s-display-m {
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 122;
+  text-transform: uppercase;
+  font-weight: 540;
+  line-height: 0.96;
+  letter-spacing: 0.005em;
+}
+.s-display-xl { font-size: clamp(2.6rem, 8.5vw, 6.6rem); font-weight: 580; }
+.s-display-l { font-size: clamp(1.9rem, 4.6vw, 3.4rem); }
+.s-display-m { font-size: clamp(1.25rem, 2.6vw, 1.75rem); }
+
+.s-eyebrow {
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 110;
+  text-transform: uppercase;
+  letter-spacing: 0.38em;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.s-lede {
+  font-family: var(--font-sans);
+  font-weight: 340;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.55;
+  letter-spacing: 0.002em;
+}
+
+.s-body {
+  font-family: var(--font-sans);
+  font-weight: 380;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+/* the one editorial counterpoint — Fraunces italic, "never boring" */
+.s-accent-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 350;
+  letter-spacing: 0.005em;
+}
+
+/* site wordmark — Elise: "Studio kleiner, Verstelle groot" */
+.s-wordmark {
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 124;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.28em;
+}
+.s-wordmark .s-top {
+  font-variation-settings: "wdth" 100;
+  font-weight: 460;
+  letter-spacing: 0.52em;
+  font-size: 0.34em;
+  opacity: 0.75;
+}
+
+/* thin index numbers on cases */
+.s-index {
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 122;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+/* underline-grow link */
+.s-link {
+  position: relative;
+  display: inline-block;
+}
+.s-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.s-link:hover::after,
+.s-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* slow ken-burns on hero */
+@keyframes s-drift {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+.s-drift { animation: s-drift 8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .s-drift { animation: none; transform: none; }
+}

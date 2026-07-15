@@ -21,6 +21,7 @@ const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
   display: "swap",
+  axes: ["wdth"],
 });
 
 export const metadata: Metadata = {

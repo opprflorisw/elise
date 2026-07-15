@@ -17,6 +17,14 @@ export function JourneyNav() {
           <Wordmark size="sm" />
         </Link>
         <nav className="flex items-center gap-1.5 sm:gap-2.5">
+          <Link
+            href="/site"
+            className="mr-1 rounded-full border px-3 py-1.5 font-sans text-[0.62rem] uppercase tracking-[0.16em] transition-all hover:opacity-75 sm:mr-2 sm:px-3.5"
+            style={{ borderColor: "var(--color-bordeaux)", color: "var(--color-bordeaux)" }}
+            title="Bekijk de echte website — gebouwd op basis van jouw feedback"
+          >
+            De website<span className="hidden sm:inline"> ↗</span>
+          </Link>
           {STAGES.map((s) => {
             const active = pathname === s.path || (s.path !== "/" && pathname.startsWith(s.path));
             const visited = state.visited.includes(s.id);
