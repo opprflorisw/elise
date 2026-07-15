@@ -1,7 +1,9 @@
 # Process — The Journey Website for Elise  *(LOCKED PLAN)*
 
-> **Status:** grilling session completed 2026-07-15. All major decisions locked below.
-> Built by Floris **for** Elise. Next step: Phase 1 (content assembly) → build.
+> **Status:** BUILT & DEPLOYED 2026-07-15. Live (unlisted, noindex) at
+> **https://elise-inky.vercel.app** — git-linked to `opprflorisw/elise` `main`, so every push
+> auto-deploys. Built by Floris **for** Elise.
+> Images served from jsDelivr CDN (pinned to a commit SHA); see `lib/imageLoader.js`.
 >
 > **Source of truth for content:** [`elise.md`](./elise.md) — the studio profile.
 
