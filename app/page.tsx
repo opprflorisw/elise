@@ -22,7 +22,7 @@ export default function StartPage() {
       <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-5 pt-24 sm:px-10">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/backdrops/start-hero.png"
+            src="/images/backdrops/start-hero.webp"
             alt=""
             fill
             priority

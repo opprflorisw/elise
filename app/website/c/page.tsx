@@ -16,7 +16,7 @@ export default function ConceptC() {
 
       {/* full-viewport hero */}
       <section className="relative flex h-[100svh] flex-col">
-        <Image src="/images/concept-c/hero.png" alt="" fill priority className="object-cover" style={{ opacity: 0.72 }} />
+        <Image src="/images/concept-c/hero.webp" alt="" fill priority className="object-cover" style={{ opacity: 0.72 }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(23,21,18,0.35),rgba(23,21,18,0.15) 40%,rgba(23,21,18,0.9))" }} />
 
         {/* minimal top row: wordmark + a single menu dot */}
@@ -51,7 +51,7 @@ export default function ConceptC() {
           <span className="text-[0.7rem] uppercase tracking-[0.3em]" style={{ color: TRAV }}>Geselecteerd project</span>
           <div className="mt-6 grid items-center gap-8 sm:grid-cols-[3fr,2fr]">
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image src="/images/concept-c/project-1.png" alt="" fill sizes="60vw" className="object-cover" />
+              <Image src="/images/concept-c/project-1.webp" alt="" fill sizes="60vw" className="object-cover" />
             </div>
             <div>
               <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] leading-tight">Vide-woning, Amsterdam-Oost</h2>

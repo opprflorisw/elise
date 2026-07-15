@@ -49,18 +49,18 @@ export const nooitChoices: Choice[] = [
 ];
 
 export const materials: Material[] = [
-  { id: "walnoot", label: "Walnoot", src: "/images/materials/walnoot.png" },
-  { id: "travertin", label: "Travertin", src: "/images/materials/travertin.png" },
-  { id: "calacatta-viola", label: "Calacatta Viola", src: "/images/materials/calacatta-viola.png" },
-  { id: "chroom", label: "Chroom", src: "/images/materials/chroom.png" },
-  { id: "messing", label: "Messing", src: "/images/materials/messing.png" },
-  { id: "mohair-groen", label: "Mohair (groen)", src: "/images/materials/mohair-groen.png" },
-  { id: "bordeaux-lak", label: "Bordeaux lak", src: "/images/materials/bordeaux-lak.png" },
-  { id: "rookglas", label: "Rookglas", src: "/images/materials/rookglas.png" },
-  { id: "cognac-leer", label: "Cognac leer", src: "/images/materials/cognac-leer.png" },
-  { id: "boucle", label: "Bouclé", src: "/images/materials/boucle.png" },
-  { id: "kalkverf", label: "Kalkverf", src: "/images/materials/kalkverf.png" },
-  { id: "burl-hout", label: "Burl hout", src: "/images/materials/burl-hout.png" },
+  { id: "walnoot", label: "Walnoot", src: "/images/materials/walnoot.webp" },
+  { id: "travertin", label: "Travertin", src: "/images/materials/travertin.webp" },
+  { id: "calacatta-viola", label: "Calacatta Viola", src: "/images/materials/calacatta-viola.webp" },
+  { id: "chroom", label: "Chroom", src: "/images/materials/chroom.webp" },
+  { id: "messing", label: "Messing", src: "/images/materials/messing.webp" },
+  { id: "mohair-groen", label: "Mohair (groen)", src: "/images/materials/mohair-groen.webp" },
+  { id: "bordeaux-lak", label: "Bordeaux lak", src: "/images/materials/bordeaux-lak.webp" },
+  { id: "rookglas", label: "Rookglas", src: "/images/materials/rookglas.webp" },
+  { id: "cognac-leer", label: "Cognac leer", src: "/images/materials/cognac-leer.webp" },
+  { id: "boucle", label: "Bouclé", src: "/images/materials/boucle.webp" },
+  { id: "kalkverf", label: "Kalkverf", src: "/images/materials/kalkverf.webp" },
+  { id: "burl-hout", label: "Burl hout", src: "/images/materials/burl-hout.webp" },
 ];
 
 // ---- Stage 3: Style ----
@@ -86,7 +86,7 @@ export function moodboard(): GridItem[] {
   for (const [c, n] of Object.entries(clusters)) {
     for (let i = 1; i <= n; i++) {
       const id = `${c}-${String(i).padStart(2, "0")}`;
-      items.push({ id, src: `/images/moodboard/${id}.png`, cluster: clusterLabels[c] });
+      items.push({ id, src: `/images/moodboard/${id}.webp`, cluster: clusterLabels[c] });
     }
   }
   return items;
@@ -158,7 +158,7 @@ export const mockupDirections: Record<string, string> = {
 export function mockupGrid(): GridItem[] {
   const items: GridItem[] = [];
   for (const [dir, ids] of Object.entries(mockups)) {
-    ids.forEach((id) => items.push({ id, src: `/design/${id}.png`, cluster: mockupDirections[dir], caption: id.slice(3).replace(/-/g, " ") }));
+    ids.forEach((id) => items.push({ id, src: `/design/${id}.webp`, cluster: mockupDirections[dir], caption: id.slice(3).replace(/-/g, " ") }));
   }
   return items;
 }

@@ -38,7 +38,7 @@ export default function ConceptA() {
       {/* hero */}
       <section className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="relative aspect-[16/10] overflow-hidden rounded-sm">
-          <Image src="/images/concept-a/hero.png" alt="" fill priority className="object-cover" />
+          <Image src="/images/concept-a/hero.webp" alt="" fill priority className="object-cover" />
         </div>
         <div className="mx-auto mt-10 max-w-3xl text-center">
           <h1 className="font-display text-[clamp(1.8rem,4.5vw,3rem)] leading-tight">
@@ -62,8 +62,8 @@ export default function ConceptA() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           {[
-            { src: "/images/concept-a/project-1.png", t: "Herenhuis, Amsterdam-Zuid", m: "Volledige transformatie" },
-            { src: "/images/concept-a/project-2.png", t: "Bovenhuis, Grachtengordel", m: "Keuken & leefruimte" },
+            { src: "/images/concept-a/project-1.webp", t: "Herenhuis, Amsterdam-Zuid", m: "Volledige transformatie" },
+            { src: "/images/concept-a/project-2.webp", t: "Bovenhuis, Grachtengordel", m: "Keuken & leefruimte" },
           ].map((p) => (
             <figure key={p.t} className="group">
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm">

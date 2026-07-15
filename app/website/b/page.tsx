@@ -29,7 +29,7 @@ export default function ConceptB() {
       {/* hero */}
       <section className="mx-auto mt-10 max-w-6xl px-6 sm:px-10">
         <div className="relative aspect-[16/9] overflow-hidden rounded-md" style={{ boxShadow: "0 30px 80px rgba(0,0,0,0.4)" }}>
-          <Image src="/images/concept-b/hero.png" alt="" fill priority className="object-cover" />
+          <Image src="/images/concept-b/hero.webp" alt="" fill priority className="object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,transparent 55%,rgba(42,37,31,0.85))" }} />
         </div>
         <div className="mt-10 text-center">
@@ -50,8 +50,8 @@ export default function ConceptB() {
         <div className="mb-6 h-px w-full" style={{ background: `${CHAMP}44` }} />
         <div className="grid gap-6 sm:grid-cols-2">
           {[
-            { src: "/images/concept-b/project-1.png", t: "Penthouse, Zuidas", m: "Avondlijke lounge" },
-            { src: "/images/concept-b/project-2.png", t: "Herenhuis, Den Haag", m: "Eetkamer & bar" },
+            { src: "/images/concept-b/project-1.webp", t: "Penthouse, Zuidas", m: "Avondlijke lounge" },
+            { src: "/images/concept-b/project-2.webp", t: "Herenhuis, Den Haag", m: "Eetkamer & bar" },
           ].map((p) => (
             <figure key={p.t} className="group overflow-hidden rounded-md" style={{ background: DUSK_DEEP }}>
               <div className="relative aspect-[4/3] overflow-hidden">

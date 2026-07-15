@@ -12,9 +12,9 @@ import { mockupGrid, mockupDirections } from "@/lib/content";
 const stage = stageById("website");
 
 const concepts = [
-  { slug: "a", name: "Warm Boutique", src: "/design/B1-boutique-greige.png", accent: "#6E1423", desc: "Parijse greige, hoog-contrast serif, ingetogen maar rijk." },
-  { slug: "b", name: "Parijse Dusk", src: "/design/D3-parisian-dusk.png", accent: "#9A5B33", desc: "Avondlijke warmte, champagne-goud, private-club gevoel." },
-  { slug: "c", name: "Donkere Monoliet", src: "/design/E3-dark-monolith.png", accent: "#191714", desc: "Cinematische architectuur, bijna geen UI, vol beeld." },
+  { slug: "a", name: "Warm Boutique", src: "/design/B1-boutique-greige.webp", accent: "#6E1423", desc: "Parijse greige, hoog-contrast serif, ingetogen maar rijk." },
+  { slug: "b", name: "Parijse Dusk", src: "/design/D3-parisian-dusk.webp", accent: "#9A5B33", desc: "Avondlijke warmte, champagne-goud, private-club gevoel." },
+  { slug: "c", name: "Donkere Monoliet", src: "/design/E3-dark-monolith.webp", accent: "#191714", desc: "Cinematische architectuur, bijna geen UI, vol beeld." },
 ];
 
 export default function WebsiteHub() {
