@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ============================================================
+   STUDIO VERSTELLE — Journey design system
+   ============================================================ */
+
+@theme {
+  /* base palette — warm greige "paper" world */
+  --color-paper: #efeae3;
+  --color-paper-deep: #e4ddd2;
+  --color-paper-dark: #d9d0c3;
+  --color-ink: #1c1917;
+  --color-ink-soft: #4a443c;
+  --color-line: rgba(28, 25, 23, 0.14);
+  --color-line-strong: rgba(28, 25, 23, 0.28);
+
+  /* per-stage statement accents */
+  --color-bordeaux: #6e1423;
+  --color-gold: #9c7a3c;
+  --color-cobalt: #23409a;
+  --color-seventies: #b4562a;
+
+  /* concept palettes */
+  --color-a-paper: #ede7de;
+  --color-a-ink: #221d18;
+  --color-b-dusk: #423c34;
+  --color-b-champagne: #d8c39a;
+  --color-b-green: #2e4438;
+  --color-b-cognac: #9a5b33;
+  --color-c-black: #191714;
+  --color-c-white: #f2ede4;
+  --color-c-travertine: #c9b99f;
+
+  --font-display: var(--font-italiana), Georgia, serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* film-grain overlay for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+/* ---- typographic primitives ---- */
+.font-display { font-family: var(--font-display); }
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  line-height: 0.9;
+}
+.wordmark .top {
+  font-family: var(--font-sans);
+  letter-spacing: 0.4em;
+  font-weight: 400;
+  display: block;
+}
+
+.display-xl {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 340;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.75rem, 8vw, 6rem);
+}
+
+.display-l {
+  font-family: var(--font-serif);
+  font-weight: 360;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 5.5vw, 3.75rem);
+}
+
+.lede {
+  font-family: var(--font-serif);
+  font-weight: 380;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  line-height: 1.5;
+}
+
+.body {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+/* hairline rules */
+.rule { height: 1px; background: var(--color-line); border: 0; }
+.rule-strong { height: 1px; background: var(--color-line-strong); border: 0; }
+
+/* arch mask motif */
+.arch-top {
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+}
+
+/* reveal-on-scroll */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bloom {
+  0% { transform: scale(0.6); opacity: 0.4; }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.bloom { animation: bloom 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* soft focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-bordeaux);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; opacity: 1; transform: none; }
+  .bloom { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* hide scrollbar on horizontal galleries but keep function */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
