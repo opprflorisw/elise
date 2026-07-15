@@ -5,8 +5,7 @@ import { dirname } from "node:path";
 const nextConfig = {
   outputFileTracingRoot: dirname(fileURLToPath(import.meta.url)),
   images: {
-    loader: "custom",
-    loaderFile: "./lib/imageLoader.js",
+    formats: ["image/avif", "image/webp"],
   },
 };
 export default nextConfig;

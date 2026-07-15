@@ -112,17 +112,37 @@ export const pijlers = [
 ];
 
 export const methodeStappen = [
-  { n: "01", t: "Drie foto’s", d: "Van een bestaande ruimte van de klant.", src: "/images/method/step-1.png" },
-  { n: "02", t: "Varianten", d: "Diezelfde ruimte, verschillende stijlrichtingen — met AI gevisualiseerd.", src: "/images/method/step-2.png" },
-  { n: "03", t: "Begeleide sessie", d: "Zelf doorklikken én feedback geven, of samen doorlopen met een spraakopname.", src: "/images/method/step-3.png" },
-  { n: "04", t: "Definitief ontwerp", d: "Alle feedback — met verwijzing naar wát en wáár — wordt de input voor het uiteindelijke ontwerp.", src: "/images/method/step-4.png" },
+  {
+    n: "01",
+    t: "Drie foto’s",
+    d: "De klant stuurt drie foto’s van een bestaande ruimte — precies zoals hij nu is. Geen opmeting, geen brief, geen jargon. Alleen het pand zoals het er vandaag bij staat.",
+    src: "/images/method/step-1.webp",
+  },
+  {
+    n: "02",
+    t: "AI-varianten",
+    d: "Binnen minuten toont de AI diezelfde ruimte in verschillende stijlrichtingen — jouw ontwerp-DNA op hún muren. De klant ziet niet een moodboard van iemand anders, maar het eigen huis, getransformeerd. Zo wordt het abstracte ineens voelbaar.",
+    src: "/images/method/step-2.webp",
+  },
+  {
+    n: "03",
+    t: "Begeleide sessie",
+    d: "De klant loopt door de varianten — zelf, of samen met jou. Bij elk beeld reageert hij: dit wel, dit niet, en waaróm. Precies wat je nu zelf aan het doen bent op deze site.",
+    src: "/images/method/step-3.webp",
+  },
+  {
+    n: "04",
+    t: "Definitief ontwerp",
+    d: "Alle reacties — gekoppeld aan het exacte beeld waar ze over gingen — vormen samen de brief. Geen giswerk meer over wat de klant écht wil. Jij vertaalt het naar één uitzonderlijk ontwerp.",
+    src: "/images/method/step-4.webp",
+  },
 ];
 
 export const aiTools: { id: string; label: string; desc: string }[] = [
-  { id: "visualisatie", label: "AI ruimte-visualisatie", desc: "Van moodboard naar “wat kan deze kamer worden” — beelden in jouw stijl." },
-  { id: "moodboards", label: "Moodboard & palet generator", desc: "Snel moodboards en kleurpaletten bouwen in jouw ontwerp-DNA." },
-  { id: "intake", label: "Klant-intake assistent", desc: "Een slimme intake op je site die het gesprek voorbereidt tot een brief." },
-  { id: "ops", label: "Studio operatie", desc: "Documentatie, offertes, planning — het werk dat ontwerptijd opslokt." },
+  { id: "visualisatie", label: "AI ruimte-visualisatie", desc: "De motor onder de methode hierboven: een foto van de klant erin, en er komen meerdere ontwerpvarianten uit — de bestaande ruimte, herzien in jouw stijl. Van “stel je voor…” naar “kijk maar”." },
+  { id: "moodboards", label: "Moodboard & palet generator", desc: "In minuten een samenhangend moodboard en kleurpalet in jóúw ontwerp-DNA, klaar om aan een klant te tonen. Geen avonden meer schuiven in Pinterest." },
+  { id: "intake", label: "Klant-intake assistent", desc: "Een slimme intake op je site: de klant beschrijft pand, budget en wensen, de AI structureert het tot een heldere brief nog vóór het eerste gesprek." },
+  { id: "ops", label: "Studio operatie", desc: "Documentatie, offertes, materiaallijsten, planning — het onglamoureuze werk dat als eenpitter je ontwerptijd opslokt, deels geautomatiseerd." },
 ];
 
 export const toolReactie: Choice[] = [
