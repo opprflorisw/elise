@@ -12,6 +12,7 @@ export function ResearchNav() {
   const [open, setOpen] = useState(false);
   const active = (slug: string) => pathname === `/research/${slug}`;
   const onIndex = pathname === "/research";
+  const onNotes = pathname.startsWith("/research/notities");
 
   const Index = ({ onNavigate }: { onNavigate?: () => void }) => (
     <nav className="space-y-6">
@@ -62,6 +63,37 @@ export function ResearchNav() {
           </ul>
         </div>
       ))}
+      <div className="border-t border-[var(--line)] pt-5">
+        <p className="r-eyebrow !text-[0.5rem] opacity-40">De achterkant</p>
+        <ul className="mt-2.5 space-y-1.5">
+          <li>
+            <Link
+              href="/research/notities"
+              onClick={onNavigate}
+              className="flex items-baseline gap-2.5 transition-opacity hover:opacity-100"
+              style={{ opacity: onNotes ? 1 : 0.62 }}
+              aria-current={onNotes ? "page" : undefined}
+            >
+              <span
+                className="r-numeral shrink-0 text-[0.62rem]"
+                style={{ color: onNotes ? "var(--series-1)" : "var(--ink-3)" }}
+              >
+                ··
+              </span>
+              <span
+                className="r-body !text-[0.86rem]"
+                style={{
+                  fontWeight: onNotes ? 560 : 400,
+                  borderBottom: onNotes ? "1px solid var(--series-1)" : "none",
+                }}
+              >
+                De notities
+              </span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       <div className="border-t border-[var(--line)] pt-5">
         <Link href="/" onClick={onNavigate} className="r-small hover:opacity-70">
           ← De reis
