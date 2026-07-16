@@ -3,6 +3,7 @@ import { PageHead, Section, Prose, CounterCase, Decisions, Decision, NextPage, T
 import { Pipeline, Owner, type Stage } from "@/components/research/Pipeline";
 import { FunnelCalculator } from "@/components/research/Calculators";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Klantreis & conversie — Dossier" };
 const P = pageBySlug("klantreis");
@@ -209,6 +210,10 @@ export default function Page() {
           hangtAf="Zie hoofdstuk 05: de dichtstbijzijnde comp (Ontwerpcheck, €1.450) verrekent bewust níét. Dat is een kans om ons op te onderscheiden, of een waarschuwing dat het niet nodig is."
         />
       </Decisions>
+
+      <ChapterCoach slug="klantreis" />
+
+      
 
       <NextPage slug="marketing" title="Marketing & kanalen" n="07" />
     </>

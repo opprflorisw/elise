@@ -18,6 +18,7 @@ import {
 import { CapacityCalculator } from "@/components/research/Calculators";
 import { Figure, StackedBars } from "@/components/research/Charts";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Prijsmodel & het pad naar €250k — Dossier" };
 const P = pageBySlug("prijsmodel");
@@ -414,6 +415,10 @@ export default function Page() {
           { t: "AI in architectural visualization — 2025/2026 reality check (J-curve)", url: "https://ravelin3d.com/blog/ai-in-architectural-visualization-revolution-or-hype-2025-2026-reality-check.html", org: "Ravelin3D", jaar: "2026" },
         ]}
       />
+
+      <ChapterCoach slug="prijsmodel" />
+
+      
 
       <NextPage slug="klantreis" title="Klantreis & conversie" n="06" />
     </>

@@ -15,6 +15,7 @@ import {
   Est,
 } from "@/components/research/Blocks";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Marketing & kanalen — Dossier" };
 const P = pageBySlug("marketing");
@@ -396,6 +397,10 @@ export default function Page() {
           { t: "Kosten beursstand (update 2026)", url: "https://destandbouwkoning.nl/prijzen-en-kosten-beursstand/", org: "De Standbouw Koning", jaar: "2026" },
         ]}
       />
+
+      <ChapterCoach slug="marketing" />
+
+      
 
       <NextPage slug="tools" title="Het gereedschap" n="08" />
     </>

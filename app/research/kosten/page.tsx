@@ -16,6 +16,7 @@ import {
 } from "@/components/research/Blocks";
 import { CostDashboard } from "@/components/research/Calculators";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Kosten & marge — Dossier" };
 const P = pageBySlug("kosten");
@@ -222,6 +223,10 @@ export default function Page() {
           { t: "Supabase pricing (EU-regio)", org: "Supabase", jaar: "2026" },
         ]}
       />
+
+      <ChapterCoach slug="kosten" />
+
+      
 
       <NextPage slug="setup" title="Juridisch & setup" n="10" />
     </>

@@ -15,6 +15,7 @@ import {
 } from "@/components/research/Blocks";
 import { pageBySlug } from "@/lib/research";
 import Link from "next/link";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Roadmap & beslismomenten — Dossier" };
 const P = pageBySlug("roadmap");
@@ -323,6 +324,10 @@ export default function Page() {
           { t: "Eigen bedrijf starten vanuit de WW", url: "https://ondernemersplein.overheid.nl/bedrijf-starten/startsituaties/eigen-bedrijf-starten-vanuit-de-ww/", org: "Ondernemersplein", jaar: "2026" },
         ]}
       />
+
+      <ChapterCoach slug="roadmap" />
+
+      
 
       <div className="mt-16 border-t border-[var(--line-2)] pt-8 sm:mt-24">
         <Link href="/research" className="group block">

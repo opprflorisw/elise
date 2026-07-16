@@ -17,6 +17,7 @@ import {
 import { SetupChecklist } from "@/components/research/Calculators";
 import { CHECKLIST } from "@/lib/checklist";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Juridisch & setup — Dossier" };
 const P = pageBySlug("setup");
@@ -252,6 +253,10 @@ export default function Page() {
           { t: "Trump v. Slaughter — onafhankelijkheid FTC", org: "US Supreme Court", jaar: "29-06-2026" },
         ]}
       />
+
+      <ChapterCoach slug="setup" />
+
+      
 
       <NextPage slug="risicos" title="Risico's" n="11" />
     </>

@@ -17,6 +17,7 @@ import {
 } from "@/components/research/Blocks";
 import { Figure, Funnel } from "@/components/research/Charts";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "De markt — Dossier" };
 const P = pageBySlug("markt");
@@ -278,6 +279,10 @@ export default function Page() {
           { t: "Onderzoek consumentenvertrouwen in AI bij financiële beslissingen", org: "diverse", jaar: "2025–2026" },
         ]}
       />
+
+      <ChapterCoach slug="markt" />
+
+      
 
       <NextPage slug="concurrentie" title="De concurrentie" n="02" />
     </>

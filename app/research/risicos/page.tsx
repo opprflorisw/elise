@@ -12,6 +12,7 @@ import {
 } from "@/components/research/Blocks";
 import { Figure, RiskMatrix, type Risk } from "@/components/research/Charts";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Risico's — Dossier" };
 const P = pageBySlug("risicos");
@@ -294,6 +295,10 @@ export default function Page() {
           hangtAf="De bereidheid van de werkgever. Daarom: eerst het gesprek over nevenwerkzaamheden goed voeren."
         />
       </Decisions>
+
+      <ChapterCoach slug="risicos" />
+
+      
 
       <NextPage slug="roadmap" title="Roadmap & beslismomenten" n="12" />
     </>

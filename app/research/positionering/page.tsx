@@ -15,6 +15,7 @@ import {
   Est,
 } from "@/components/research/Blocks";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Positionering & propositie — Dossier" };
 const P = pageBySlug("positionering");
@@ -227,6 +228,10 @@ export default function Page() {
           advies="Beide, in die volgorde. De sfeer doet wat een homepage moet doen — laten voelen dat hier smaak zit. De methode vangt degene die daarna denkt 'mooi, maar hoe begin ik?'. Dat is precies de scheiding tussen aantrekken en overtuigen."
         />
       </Decisions>
+
+      <ChapterCoach slug="positionering" />
+
+      
 
       <NextPage slug="prijsmodel" title="Prijsmodel & het pad naar €250k" n="05" />
     </>

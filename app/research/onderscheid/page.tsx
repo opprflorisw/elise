@@ -16,6 +16,7 @@ import {
   Est,
 } from "@/components/research/Blocks";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Onderscheid & kopieerbaarheid — Dossier" };
 const P = pageBySlug("onderscheid");
@@ -367,6 +368,10 @@ export default function Page() {
           { t: "Merkregistratie Benelux — tarieven", url: "https://www.boip.int", org: "BOIP", jaar: "2026" },
         ]}
       />
+
+      <ChapterCoach slug="onderscheid" />
+
+      
 
       <NextPage slug="positionering" title="Positionering & propositie" n="04" />
     </>

@@ -13,6 +13,7 @@ import {
 } from "@/components/research/Blocks";
 import { ToolGrid, SystemDiagram, type Tool } from "@/components/research/Tools";
 import { pageBySlug } from "@/lib/research";
+import { ChapterCoach } from "@/components/research/ChapterCoach";
 
 export const metadata: Metadata = { title: "Het gereedschap — Dossier" };
 const P = pageBySlug("tools");
@@ -353,6 +354,10 @@ export default function Page() {
           hangtAf="Of de tooling ooit aan andere studio's verkocht zou worden."
         />
       </Decisions>
+
+      <ChapterCoach slug="tools" />
+
+      
 
       <NextPage slug="kosten" title="Kosten & marge" n="09" />
     </>
