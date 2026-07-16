@@ -16,6 +16,8 @@ import {
   Versus,
 } from "@/components/research/Blocks";
 import { Figure, PositioningMap } from "@/components/research/Charts";
+import { ConcurrentHub } from "@/components/research/ConcurrentHub";
+import { Coach, VerderLezen, Achtergrond } from "@/components/research/Coach";
 import { pageBySlug } from "@/lib/research";
 
 export const metadata: Metadata = { title: "De concurrentie — Dossier" };
@@ -304,6 +306,13 @@ export default function Page() {
         />
       </Section>
 
+      <Section
+        title="Bekijk ze zelf"
+        intro="De tabel hierboven is onze lezing van de markt. Dit is de markt zelf — 45 partijen, één klik weg. Niemand hoeft ons op ons woord te geloven, en je leert meer van tien minuten op hun sites dan van tien alinea's van ons."
+      >
+        <ConcurrentHub />
+      </Section>
+
       <CounterCase>
         <p>
           <strong>Ons kernbewijs is ons zwakste bewijs.</strong> Het visualisatiegat en &ldquo;de ontwerper
@@ -352,6 +361,71 @@ export default function Page() {
           hangtAf="Of de klantinterviews de visualisatiepijn bevestigen. Zo niet: draai de volgorde om."
         />
       </Decisions>
+
+      <Coach
+        doen={[
+          {
+            taak: "Bezoek vijf studiosites uit de lijst hierboven en noteer per site wat je voelt in de eerste tien seconden — niet wat je vindt. Dat gevoel is precies wat jouw klant ook heeft.",
+            tijd: "45 min",
+          },
+          {
+            taak: "Vraag bij één middensegment-speler (PD Interieurontwerp of Stijlidee) een kennismaking aan en loop hun funnel door als klant. Meet de responstijd, lees hun toon, kijk wat ze vragen.",
+            tijd: "20 min + wachten",
+          },
+          {
+            taak: "Zoek 'interieurontwerper amsterdam' en kijk wie er boven staat. Bijna niemand van de mooie studio's — wél Reinder Veenstra en de architectenbureaus met regio-landingspagina's. Vraag je af waarom.",
+            tijd: "15 min",
+          },
+          {
+            taak: "Probeer RoomGPT op een foto van je eigen woonkamer. Dat is het €15-anker waarmee je vergeleken wordt zodra je AI noemt.",
+            tijd: "10 min",
+          },
+        ]}
+        denken={[
+          "Aan wie zou jíj een klant verliezen, en waarom? Als het antwoord 'Framework' is, zit je te hoog. Als het 'een stylist van €90/uur' is, zit je verkeerd gepositioneerd.",
+          "Bricks Studio heeft het stijl-DNA dat het dichtst bij jou ligt — en 2.850 volgers. Framework heeft 83.000. Wat zegt dat over de relatie tussen smaak en bereik, en welke van de twee wil jij zijn?",
+          "Nul van de vijfentwintig publiceert een prijs. Dat is óf een kans, óf vijfentwintig mensen die iets weten wat wij niet weten. Welke van de twee is het — en hoe kom je daarachter zonder het uit te proberen?",
+          "Masters of Interior Design richt zich op 'mensen die precies weten wat ze willen'. Jij op mensen die dat níét weten. Wie van die twee heeft het meeste geld, en wie het meeste vertrouwen nodig?",
+          "De gevaarlijkste concurrent op argument is de aannemer met eigen ontwerp: 'één hand, geen gedoe'. Wat is jouw antwoord daarop, in één zin, aan een keukentafel?",
+        ]}
+      />
+
+      <VerderLezen
+        items={[
+          {
+            titel: "PD Interieurontwerp — tarieven",
+            url: "https://www.pdinterieurontwerp.nl/tarieven",
+            waarom: "Het hoogste geverifieerde prijspunt van het transparante middensegment: €3.650 + styling. Zie hoe zij het opschrijven.",
+          },
+          {
+            titel: "IKEA — Compleet Interieuradvies",
+            url: "https://www.ikea.com/nl/nl/customer-service/services/interior-design-service-home/",
+            waarom: "€299 voor moodboard, productlijst, lichtplan, plattegrond en 3D. Dít is het anker in het hoofd van je klant.",
+          },
+          {
+            titel: "Decorilla — pricing",
+            url: "https://www.decorilla.com/pricing",
+            waarom: "De enige e-designpartij die 'gut renovations' claimt, vanaf €1.780. Het duidelijkste upmarket-signaal in de categorie.",
+          },
+          {
+            titel: "Bricks Studio",
+            url: "https://bricksstudio.nl/",
+            waarom: "Het stijl-DNA dat het dichtst bij het jouwe ligt. Bestudeer wat ze goed doen — en wat ze laten liggen.",
+          },
+          {
+            titel: "Studio Reinder Veenstra",
+            url: "https://reinderveenstra.com/binnenhuisarchitect-amsterdam",
+            waarom: "De enige premium studio die zijn tariefstructuur benoemt, plus de sterkste SEO van de groep.",
+          },
+          {
+            titel: "Houzz — 2023 renovatie-onderzoek",
+            url: "https://pro.houzz.com/pro-learn/blog/2023-houzz-survey-offers-homeowner-renovation-insight",
+            waarom: "Het cijfer dat tegen ons pleit: 18% noemt visualisatie een obstakel. Lees het zelf voordat je de propositie vastzet.",
+          },
+        ]}
+      />
+
+      <Achtergrond notes={["concurrentie"]} />
 
       <Sources
         note="Circa 110 bronvermeldingen met zekerheidslabels; hieronder de dragende. Volledig in research-notes/concurrentie.md."
