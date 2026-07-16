@@ -4,10 +4,14 @@
 // feedback-elise.md for the source answers.
 // ============================================================
 
+// NB: "interieurarchitect" — en woordcombinaties met die titel, óók de Engelse
+// ("interior architect", "interior architecture") — zijn wettelijk beschermd via
+// de Wet op de architectentitel. Zolang Elise niet in het Architectenregister
+// staat, vermijden we die woorden hier. Zie /research/onderscheid.
 export const SITE = {
   name: "Studio Verstelle",
   tagline: "Residential Transformation Studio",
-  sub: "Interior architecture & property transformation — Amsterdam",
+  sub: "Interieurontwerp & woningtransformatie — Amsterdam",
   signature: "Een cocon van verbeelding, doch rust.",
 };
 

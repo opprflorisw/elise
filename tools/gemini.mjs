@@ -21,9 +21,12 @@ Gallery-like. Interiors that could only be in Paris or Milan. Editorial, art-dir
 magazine-quality photography. No text, no watermarks, no people unless asked.
 `;
 
-export async function genImage({ prompt, aspect = "16:9", outPath, retries = 3 }) {
+// skipDNA exists for one case only: the "before" photos in the research demos,
+// which must look like an ordinary phone snapshot. Prepending the studio DNA
+// there would make the demo lie about what the engine actually receives.
+export async function genImage({ prompt, aspect = "16:9", outPath, retries = 3, skipDNA = false }) {
   const body = {
-    contents: [{ parts: [{ text: DNA + "\n\n" + prompt }] }],
+    contents: [{ parts: [{ text: skipDNA ? prompt : DNA + "\n\n" + prompt }] }],
     generationConfig: {
       responseModalities: ["TEXT", "IMAGE"],
       imageConfig: { aspectRatio: aspect },

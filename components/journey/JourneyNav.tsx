@@ -18,6 +18,14 @@ export function JourneyNav() {
         </Link>
         <nav className="flex items-center gap-1.5 sm:gap-2.5">
           <Link
+            href="/research"
+            className="rounded-full border px-3 py-1.5 font-sans text-[0.62rem] uppercase tracking-[0.16em] transition-all hover:opacity-75 sm:px-3.5"
+            style={{ borderColor: "var(--color-cobalt)", color: "var(--color-cobalt)" }}
+            title="Het onderzoeksdossier — van merk naar bedrijf"
+          >
+            Dossier<span className="hidden sm:inline"> ↗</span>
+          </Link>
+          <Link
             href="/site"
             className="mr-1 rounded-full border px-3 py-1.5 font-sans text-[0.62rem] uppercase tracking-[0.16em] transition-all hover:opacity-75 sm:mr-2 sm:px-3.5"
             style={{ borderColor: "var(--color-bordeaux)", color: "var(--color-bordeaux)" }}

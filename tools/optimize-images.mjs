@@ -11,6 +11,7 @@ const rules = [
   { match: /public[\\/]images[\\/]concept/, width: 1500, q: 80 },
   { match: /public[\\/]images[\\/]backdrops/, width: 1600, q: 76 },
   { match: /public[\\/]images[\\/]method/, width: 1100, q: 78 },
+  { match: /public[\\/]images[\\/]research/, width: 1000, q: 76 },
   { match: /public[\\/]images[\\/]site[\\/](home-hero|case-.*-hero)/, width: 2000, q: 80 },
   { match: /public[\\/]images[\\/]site/, width: 1400, q: 78 },
 ];
