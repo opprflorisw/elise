@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   PageHead,
   Section,
@@ -12,6 +13,7 @@ import {
   Est,
 } from "@/components/research/Blocks";
 import { ToolGrid, SystemDiagram, type Tool } from "@/components/research/Tools";
+import { BouwVolgorde } from "@/components/research/BouwVolgorde";
 import { pageBySlug } from "@/lib/research";
 import { ChapterCoach } from "@/components/research/ChapterCoach";
 
@@ -22,6 +24,7 @@ const TOOLS: Tool[] = [
   {
     n: "01",
     id: "visualisatie",
+    prd: "visualisatie",
     naam: "Visualisatie-engine",
     kern: "Klantfoto's in, ontwerpvarianten in het Verstelle-handschrift uit.",
     verdict: "bestaat al",
@@ -50,6 +53,7 @@ const TOOLS: Tool[] = [
   {
     n: "02",
     id: "sessie",
+    prd: "sessie",
     naam: "Sessie-tool",
     kern: "De reis die Elise doorliep, maar dan per klant en per project.",
     verdict: "bouwen",
@@ -76,6 +80,7 @@ const TOOLS: Tool[] = [
   {
     n: "03",
     id: "spraak",
+    prd: "spraak",
     naam: "Spraak-laag",
     kern: "Het gesprek opnemen en de zachte meningen koppelen aan het juiste beeld.",
     verdict: "kopen + koppelen",
@@ -104,6 +109,7 @@ const TOOLS: Tool[] = [
   {
     n: "04",
     id: "brief",
+    prd: "brief",
     naam: "Brief-generator",
     kern: "Sessiedata in, visiedocument plus moodboard en palet uit.",
     verdict: "bouwen",
@@ -129,6 +135,7 @@ const TOOLS: Tool[] = [
   {
     n: "05",
     id: "budget",
+    prd: "materialen",
     naam: "Budget & materialen",
     kern: "Van ontwerp naar materialenlijst en budgetindicatie.",
     verdict: "bouwen",
@@ -155,6 +162,7 @@ const TOOLS: Tool[] = [
   {
     n: "06",
     id: "portaal",
+    prd: "portaal",
     naam: "Klantportaal",
     kern: "Eén plek per project: beelden, keuzes, planning, budget, documenten.",
     verdict: "kopen",
@@ -201,6 +209,7 @@ const TOOLS: Tool[] = [
   {
     n: "08",
     id: "intake",
+    prd: "intake",
     naam: "Intake-assistent",
     kern: "Website-intake naar gekwalificeerde brief en agenda-afspraak.",
     verdict: "bouwen",
@@ -293,9 +302,44 @@ export default function Page() {
 
       <Section
         title="De acht tools"
-        intro="Klik open voor de kernflow, de MVP met nepdata, de moeilijkheden en de reden waarom het de moeite waard is."
+        intro="Klik open voor de kernflow, de MVP met nepdata, de moeilijkheden en de reden waarom het de moeite waard is. Zeven van de acht hebben een volledige PRD met een klikbare demo op nepdata — de achtste koop je gewoon."
       >
         <ToolGrid tools={TOOLS} />
+        <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
+          <Link
+            href="/research/tools/kopen"
+            className="r-card-solid group flex items-baseline justify-between gap-3 p-4 transition-colors hover:bg-[rgba(31,158,110,0.04)]"
+          >
+            <span>
+              <span className="r-display-m transition-opacity group-hover:opacity-60">
+                Wat we gewoon kopen →
+              </span>
+              <span className="r-small mt-1 block">
+                Zeven categorieën, echte prijzen, en de niet-kopen-lijst met redenen.
+              </span>
+            </span>
+          </Link>
+          <Link
+            href="/research/tools/visualisatie"
+            className="r-card-solid group flex items-baseline justify-between gap-3 p-4 transition-colors hover:bg-[rgba(42,95,214,0.03)]"
+          >
+            <span>
+              <span className="r-display-m transition-opacity group-hover:opacity-60">
+                Begin bij de demo&rsquo;s →
+              </span>
+              <span className="r-small mt-1 block">
+                Zeven MVP&rsquo;s op één verzonnen klant. Je klikt er in twintig minuten doorheen.
+              </span>
+            </span>
+          </Link>
+        </div>
+      </Section>
+
+      <Section
+        title="En in welke volgorde dan?"
+        intro="Niet alles tegelijk, en niet in de volgorde van de lijst. De sessie-ruggengraat eerst, omdat elke tool daarin de volgende voedt."
+      >
+        <BouwVolgorde />
       </Section>
 
       <Section title="Wat we bewust niet bouwen">

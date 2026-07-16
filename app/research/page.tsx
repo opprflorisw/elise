@@ -333,8 +333,12 @@ export default function ResearchIndex() {
               >
                 schatting
               </span>
-              . De volledige onderzoeksnotities staan in <code className="text-[0.85em]">research-notes/</code> —
-              ongeveer 60.000 woorden.
+              . De volledige onderzoeksnotities — ongeveer 79.000 woorden — staan niet in een map
+              maar gewoon op deze site:{" "}
+              <Link href="/research/notities" className="r-link">
+                lees ze zelf
+              </Link>
+              . Een conclusie die je niet kunt controleren, is een leus.
             </p>
             <p className="r-small mt-4 max-w-2xl">
               Wat dit dossier <strong>niet</strong> is: een pitch. Er is geen scenario doorgerekend
@@ -344,6 +348,44 @@ export default function ResearchIndex() {
             </p>
           </div>
         </Reveal>
+      </section>
+
+      <section className="mt-14">
+        <Reveal>
+          <h2 className="r-display-l border-t border-[var(--line-2)] pt-5">Waar je verder kunt</h2>
+          <p className="r-body mt-4 max-w-2xl text-[var(--ink-2)]">
+            Dit dossier is een startpunt, geen eindpunt. Elk hoofdstuk sluit af met huiswerk en
+            vragen; daarnaast liggen er twee lagen onder deze samenvatting.
+          </p>
+        </Reveal>
+        <div className="mt-6 grid gap-2.5 sm:grid-cols-3">
+          {[
+            {
+              href: "/research/notities",
+              t: "De ruwe notities",
+              d: "Acht sporen, 79.000 woorden, elke bewering met bron en zekerheidslabel. Begin bij de notitie achter je grootste twijfel.",
+            },
+            {
+              href: "/research/tools/visualisatie",
+              t: "De zeven demo's",
+              d: "Elke tool die we willen bouwen, als klikbare MVP op één verzonnen klant. Twintig minuten, en je weet wat we bedoelen.",
+            },
+            {
+              href: "/research/tools/kopen",
+              t: "Wat we gewoon kopen",
+              d: "Zeven categorieën met echte prijzen, plus de niet-kopen-lijst met redenen die je één keer hoeft te lezen.",
+            },
+          ].map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              className="r-card-solid group p-5 transition-colors hover:bg-[rgba(42,95,214,0.03)]"
+            >
+              <p className="r-display-m transition-opacity group-hover:opacity-60">{c.t} →</p>
+              <p className="r-small mt-2">{c.d}</p>
+            </Link>
+          ))}
+        </div>
       </section>
     </>
   );

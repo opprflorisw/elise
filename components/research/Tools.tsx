@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export type Tool = {
   n: string;
@@ -15,6 +16,8 @@ export type Tool = {
   voordeel: string;
   bouwtijd: string;
   afhankelijk?: string;
+  /** Slug of the full PRD page, where one exists. */
+  prd?: string;
 };
 
 const V_STYLE: Record<Tool["verdict"], { bg: string; fg: string }> = {
@@ -115,6 +118,16 @@ export function ToolGrid({ tools }: { tools: Tool[] }) {
                 </div>
                 {t.afhankelijk && (
                   <p className="r-small mt-3 !text-[0.72rem]">Hangt af van: {t.afhankelijk}</p>
+                )}
+
+                {t.prd && (
+                  <Link
+                    href={`/research/tools/${t.prd}`}
+                    className="r-eyebrow mt-5 inline-block rounded-full px-4 py-2.5 !text-[0.5rem] transition-opacity hover:opacity-80"
+                    style={{ background: "var(--series-1)", color: "#fff" }}
+                  >
+                    Lees de PRD &amp; probeer de demo →
+                  </Link>
                 )}
               </div>
             )}
